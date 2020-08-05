@@ -1,1 +1,1 @@
-web: gunicorn Emmanuel.wsgi --log-file -
+web: gunicorn Emmanuel.wsgi --log-file -1
