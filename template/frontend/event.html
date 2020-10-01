@@ -1,0 +1,42 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+
+{% block title %}
+Events
+{% endblock %}
+
+{% block content %}
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('../static/frontend/images/bg_3.jpg');" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-end justify-content-center">
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+        <h1 class="mb-3 bread">Read our Events<h1>
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Events <i class="fa fa-chevron-right"></i></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if evt %}
+	{% for e in evt %}
+<section class="ftco-section bg-light">
+  <div class="col-md-6 half ftco-animate">
+    <div class="img">
+      <img src="{{ e.pst_img.url }}" class="img-fluid rounded">
+      </div>
+      <div class="text text-center">
+      <h5><p>{{ e.post_content }}</p></h5>
+     <a href="https://api.whatsapp.com/send?phone=234{{ e.post_phone }}"><button type="button" class="btn btn-success fa fa-whatsapp">  Send a whatsapp message</button></a>
+     <button type="button" class="btn btn-success fa fa-phone"> call    0{{ e.post_phone }}</button>
+
+  </div>
+ 
+</section>
+{% endfor %}
+{% endif %}
+{% endblock %}
+
+
+

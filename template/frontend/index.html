@@ -12,198 +12,114 @@ Home
 			<div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
 				<div class="col-md-8 ftco-animate mt-5 pt-md-5" data-scrollax=" properties: { translateY: '70%' }">
 					<div class="row">
-						<div class="col-md-7">
-							<p class="mb-4 pl-md-5 line" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">“Every problem is a gift—without problems we would not grow.” – Adesoji Emmanuel</p>
+						
+					</div>
+					<div class="row d-flex" style="margin left: 100px;">
+						<div class="col-md-4">
+							<a href="#" class="btn btn-danger px-4 py-3" style="margin-left: 30px;">view material</a>
+						</div><br>
+						<div class="col-md-4">
+							<a href="#" class="btn btn-danger px-4 py-3" style="margin-left: 30px;">view material</a>
 						</div>
 					</div>
-					<h2 style="color: white;" class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Experienced for <br> creating solutions to critical business problems.</h2>
-					<p><a href="#" class="btn btn-danger px-4 py-3">Read more</a></p>
+					<div style="margin-top: 100px; right: 10px;">
+						<h6>please your evaluation will take place in :</h6>
+						<!-- Display the countdown timer in an element -->
+<p id="demo"></p>
+<h6>click the evualation button when it is time!!!!!!!! thanks</h6>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Oct 5, 2020 15:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	
-	<section class="ftco-intro">
-		<div class="container">
-			<div class="row justify-content-end">
-				<div class="col-md-7">
-					<div class="row no-gutters d-flex align-items-stretch,">
-						<div class="col-md-4 d-flex align-self-stretch ftco-animate ">
-							<div class="services-1  bg-danger">
-								<div class="line"></div>
-								<div class="icon"><span class="flaticon-bolt"></span></div>
-								<div class="media-body ">
-									<h3 class="heading mb-3">Information Technology Consultancy </h3>
-								</div>
-							</div>      
-						</div>
-						<div class="col-md-4 d-flex align-self-stretch ftco-animate">
-							<div class="services-1 bg-danger">
-								<div class="line"></div>
-								<div class="icon"><span class="flaticon-presentation"></span></div>
-								<div class="media-body">
-									<h3 class="heading mb-3">Event Planning &amp; Management </h3>
-								</div>
-							</div>      
-						</div>
-						<div class="col-md-4 d-flex align-self-stretch ftco-animate">
-							<div class="services-1 color-4  bg-danger">
-								<div class="line"></div>
-								<div class="icon"><span class="flaticon-web-programming"></span></div>
-								<div class="media-body">
-									<h3 class="heading mb-3">Graphic Design &amp; Web Development</h3>
-								</div>
-							</div>      
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 	
 		
 	</div>
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-lg-6 heading-section text-center ftco-animate">
-					<h2 class="mb-4">More than <span>5</span> years we provide <span>IT Solution, Plan and manage Event</span></h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="services-2 text-center">
-						<div class="icon">
-							<span class="flaticon-web-programming"></span>
-						</div>
-						<div class="text">
-							<h3>IT Solutions</h3>
-							<p>Web Development, app development, graphic designs and we solve  other IT related issues</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<img src="{% static 'frontend/images/services.svg' %}" class="img-fluid" alt="">
-				</div>
-				<div class="col-md-4">
-					<div class="services-2 text-center">
-						<div class="icon">
-							<span class="flaticon-secure"></span>
-						</div>
-						<div class="text">
-							<h3>Project Management</h3>
-							<p>Our Team are known for excellent service in regards to setting up and managing any kind of project. you can count on us</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-counter img" id="section-counter">
+	{% if pst %}
+	{% for p in pst %}
+	<section class="ftco-counter img" id="section-counter" style="margin-top: 50px;">
 		<div class="container">
 			<div class="row no-gutters d-flex">
-				<div class="col-md-6 d-flex">
-					<div class="img d-flex align-self-stretch" style="background-image:url(../static/frontend/images/events.jpg);"></div>
-				</div>
+				<div class="col-6">
+					<img src="{{ p.pst_img.url }}" class="Update-image" alt="Update Image" style="height: 100%; width: 100%;">
+				  </div>
 				<div class="col-md-6 p-3 pl-md-5 py-5 bg-danger">
 					<div class="row justify-content-start pb-3">
 						<div class="col-md-12 heading-section heading-section-white ftco-animate">
-							<h2 class="mb-4">Consult us here in <spaesn>SMART-WORLD</span></h2>
-							<p>As a consultant at SmartWorld, I learned the value of data and the ability to shape that information into an answer.</p>
+							<h2 class="mb-4">Other information <spaesn>WEEKLY UPDATES</span></h2>
+							<p>{{ p.post_content }}</p>
+							<p>{{ p.post_content_a }}</p>
+							<p>{{ p.post_content_b }}</p>
+							<p>{{ p.post_content_c }}</p>
+							<p>{{ p.post_content_d }}</p>
+							<p>{{ p.post_content_e }}</p>
+							<p>{{ p.post_content_f }}</p>
+							<p>{{ p.post_content_g }}</p>
 						</div>
 					</div>
+					
 					<div class="row">
-						<div class="col-md-6 justify-content-center counter-wrap ftco-animate">
-							<div class="block-18 mb-4">
-								<div class="text">
-									<strong class="number" data-number="10">0</strong>
-									<span>Project Complete</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 justify-content-center counter-wrap ftco-animate">
-							<div class="block-18 mb-4">
-								<div class="text">
-									<strong class="number" data-number="25">0</strong>
-									<span>Happy Clients</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 justify-content-center counter-wrap ftco-animate">
-							<div class="block-18 mb-4">
-								<div class="text">
-									<strong class="number" data-number="12">0</strong>
-									<span>Business Partners</span>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 justify-content-center counter-wrap ftco-animate">
-							<div class="block-18 mb-4">
-								<div class="text">
-									<strong class="number" data-number="6">0</strong>
-									<span>IT Consultant</span>
-								</div>
-							</div>
-						</div>
+					  <div class="col-12 col-sm-6">
+						<h3 class="d-inline-block d-sm-none"></h3>
+						
+						
+					  </div>
+					  <div class="col-12 col-sm-6">
+						<h3 class="my-3"></h3>
+						<p> </p>
+					
+						
+						<h6><strong>created at: {{ p.created_at }} </strong></h6>
+					  
+		  
+						<h6 class="mt-3"><strong>updates by:</strong><small>   {{ p.user_id.first_name }}</small></h6>
+						
+						
+		  
+					   
+		  
+						
+		  
+					  </div>
 					</div>
+					
 				</div>
 			</div>
 		</div>
 	</section>
-
-	<section class="ftco-section services-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-6 heading-section text-center ftco-animate">
-					<h2 class="mb-4">Our Exclusive <span></span> Services</h2>
-				</div>
-			</div>
-			<div class="row d-flex no-gutters">
-				<div class="col-md-3 d-flex align-self-stretch ftco-animate">
-					<div class="media block-6 services d-block">
-						<div class="line"></div>
-						<div class="icon"><span class="flaticon-web-programming"></span></div>
-						<div class="media-body">
-							<h3 class="heading mb-3">Web Development &<br> Software Development</h3>
-							<p>We develop web app, desktop app and mobile app</p>
-						</div>
-					</div>      
-				</div>
-				<div class="col-md-3 d-flex align-self-stretch ftco-animate">
-					<div class="media block-6 services d-block">
-						<div class="line"></div>
-						<div class="icon"><span class="flaticon-stats"></span></div>
-						<div class="media-body">
-							<h3 class="heading mb-3">Poject management <br> Event planning</h3>
-							<p>we plan and manage business projects, plan and manage Events</p>
-						</div>
-					</div>    
-				</div>
-				<div class="col-md-3 d-flex align-self-stretch ftco-animate">
-					<div class="media block-6 services d-block">
-						<div class="line"></div>
-						<div class="icon"><span class="flaticon-web-programming"></span></div>
-						<div class="media-body">
-							<h3 class="heading mb-3">Graphic Design & <br> Standard Resume</h3>
-							<p>A small river named Duden flows by their place and supplies.</p>
-						</div>
-					</div>      
-				</div>
-				<div class="col-md-3 d-flex align-self-stretch ftco-animate">
-					<div class="media block-6 services d-block">
-						<div class="line"></div>
-						<div class="icon"><span class="flaticon-presentation"></span></div>
-						<div class="media-body">
-							<h3 class="heading mb-3">Transcription <br>Translation <br> Content creation</h3>
-							<p>we create contents, transcribe and translate to major languages of Nigeria.</p>
-						</div>
-					</div>      
-				</div>
-			</div>
-		</div>
-	</section>
+{% endfor %}
+{% endif %}
 
 	
 
@@ -214,7 +130,7 @@ Home
 					<div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(images/about.jpg);">
 					</div>
 					<div class="d-flex mt-3">
-						<div class="img img-2 mr-md-2 w-100" style="background-image:url(images/about-1.jpg);"></div>
+						<div class="img img-2 mr-md-2 w-100" style="background-image:url(images/nnamdi1.jpg);"></div>
 						<div class="img img-2 ml-md-2 w-100" style="background-image:url(images/about-2.jpg);"></div>
 					</div>
 				</div>
@@ -312,91 +228,7 @@ Home
 	</section>
 	
 
-	<section class="ftco-section ftco-no-pb testimony-section hero-wrap js-fullheight" style="background-image: url(../static/frontend/images/home.jpg);">
-		<div class="overlay-1"></div>
-		<div class="container-fluid">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-					<h2 class="mb-4">Our insights &amp; creative ideas</h2>
-				</div>
-			</div>
-			<div class="row ftco-animate">
-				<div class="col-md-12 testimonial">
-					<div class="carousel-testimony owl-carousel ftco-owl">
-						<div class="item">
-							<div class="testimony-wrap d-flex align-items-stretch" style="background-image: url(../static/frontend/images/emmy2.png);">
-								<div class="overlay"></div>
-								<div class="text">
-									<div class="line"></div>
-									<p class="mb-4">full-stack Developer <br> UI/UX Designer <br> Hausa Translator/Transcriptor <br> Business Analyst.</p>
-									<p class="name">Emmanuel</p>
-									<span class="position">Python programmer</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap d-flex align-items-stretch" style="background-image: url(../static/frontend/images/mickey2.png);">
-								<div class="overlay"></div>
-								<div class="text">
-									<div class="line"></div>
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p class="name">Michael</p>
-									<span class="position">PHP Programmer</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap d-flex align-items-stretch" style="background-image: url(../static/frontend/images/nnamdi3.png);">
-								<div class="overlay"></div>
-								<div class="text">
-									<div class="line"></div>
-									<p class="mb-4">Translator/ Writer (Igbo)<br> Sound Settings <br> Private Tutor (Science) <br> Environment Analyst. 
-										
-									</p>
-									<p class="name">Nnamdi</p>
-									<span class="position">Environmentalist</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap d-flex align-items-stretch" style="background-image: url(../static/frontend/images/moses2.png);">
-								<div class="overlay"></div>
-								<div class="text">
-									<div class="line"></div>
-									<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-									<p class="name">Dare</p>
-									<span class="position">Graphic Designer</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap d-flex align-items-stretch" style="background-image: url(../static/frontend/images/ekpe.png);">
-								<div class="overlay"></div>
-								<div class="text">
-									<div class="line"></div>
-									<p class="mb-4">Organizing and coordinating events, <br> Vendor negotiations <br>Personnel manager <br>Trainer <br> Budget planner
-									</p>
-									<p class="name">Michael</p>
-									<span class="position">Event Manager</span>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="testimony-wrap d-flex align-items-stretch" style="background-image: url(../static/frontend/images/bal.png);">
-								<div class="overlay"></div>
-								<div class="text">
-									<div class="line"></div>
-									<p class="mb-4">Economist <br> Business Analyst <br> Project manager</p>
-									<p class="name"><br><br>Enoch</p>
-									<span class="position">Project Manager</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	
 
 	
 	
@@ -424,13 +256,13 @@ Home
 										<div class="select-wrap">
 											<div class="icon"><span class="fa fa-chevron-down"></span></div>
 											<select name="" id="" class="form-control">
-												<option value="">Services</option>
-												<option value="">Web Development</option>
-												<option value="">Database Analysis</option>
-												<option value="">Server Security</option>
-												<option value="">UX/UI Strategy</option>
-												<option value="">Branding</option>
-												<option value="">Applications</option>
+												<option value="">Time-shift</option>
+												<option value="">Updated-material</option>
+												<option value="">Evaluation</option>
+												<option value="">Events</option>
+												<option value="">Observation</option>
+												<option value="">Others</option>
+												
 											</select>
 										</div>
 									</div>
@@ -449,6 +281,7 @@ Home
 						</div>
 					</form>
 				</div>
+				
 			</div>
 		</div>
 	</section>
